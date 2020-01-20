@@ -1,0 +1,66 @@
+<div class="overlay1 login-container">
+    <div fxLayout="row" fxLayoutAlign="center center" class="logo-bg">
+        <span class="login-logo"><img src="/assets/{{env.project_logo}}.png"> </span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="login-main" *ngIf="loginMode">
+        <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90" style="z-index: 10;">
+
+
+            <mat-card-header>
+
+            </mat-card-header>
+            <mat-card-content fxLayout="column">
+                <!-- <form class="my-form"> -->
+                  <mat-form-field>
+                        <input matInput placeholder="Email" class="form-control" name="email" autocomplete="off"
+                        required>
+                      </mat-form-field>
+                  <mat-form-field>
+                        <input matInput placeholder="password" type="password" class="form-control" name="password"
+                        autocomplete="off" required>
+                      </mat-form-field>
+
+                <!-- <mat-form-field *ngIf="useToken">
+                        <input matInput placeholder="Token" type="text" class="form-control" name="token"
+                        autocomplete="off">
+                      </mat-form-field> -->
+                <!-- </form> -->
+            </mat-card-content>
+            <div class="chk-align">
+                <mat-checkbox fxFlex="50" fxFlex.md="100" fxFlex.gt.sm="100" fxFlex.xs="90"> Remember me!</mat-checkbox>
+                <!-- <mat-checkbox fxFlex="50" fxFlex.md="100" fxLayoutAlign="end" fxFlex.gt.sm="100" fxFlex.xs="90"
+                    [value]="useToken" (click)="showToken(!useToken)">Use token</mat-checkbox> -->
+            </div>
+            <mat-card-actions>
+                  <button fxFlex="100" mat-raised-button color="primary" (click)="login()">Login</button>
+            </mat-card-actions>
+
+            <div class="chk-align">
+                <a class="link">Forgot username/password?</a>
+            </div>
+        </mat-card>
+    </div>
+    <!-- Capcha -->
+    <div fxLayout="row" fxLayoutAlign="center center" class="login-main" *ngIf="!loginMode">
+        <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90" style="z-index: 10;">
+
+            <mat-card-header class="secu-band">
+                <h2>Security Step</h2>
+            </mat-card-header>
+            <mat-card-content fxLayout="column">
+                <div class="secure-content">
+                    <span>For your protection, you'll need to complete an additional security step.</span>
+                </div>
+
+                <re-captcha (resolved)="resolved($event)" siteKey="{{env.site_key}}"></re-captcha>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI -->
+                  <button fxFlex="50" mat-raised-button color="primary" (click)="securityLogin()" [disabled]="captchaDisable">Submit</button>
+                <!-- <button fxFlex="50" mat-raised-button color="primary" (click)="backLogin()">back to login</button>
+                <button class="mdc-button"  fxFlex="50" mat-raised-button color="primary" (click)="backLogin()">  <span class="mdc-button__ripple"></span>back to login</button> -->
+                <a mat-button   fxFlex="50" (click)="backLogin()">Back to login</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,301 @@
+<div style="display: flex;flex-direction: column;height: 100%;" >
+<div class="example-header mat-elevation-z8" fxLayout="row">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8" style="
+height: 100%;
+">
+
+  <mat-tab-group [color]="primary" [backgroundColor]="primary" mat-stretch-tabs>
+    <!-- [color]="primary" [backgroundColor]="primary" -->
+    <mat-tab label="Accounts" >
+      <ng-template matTabContent>
+        <div class='some-page-wrapper'>
+          <div class='row' fxLayout="row">
+            <div  class='row' style="flex-direction: row-reverse;padding: .5%;">
+              <label style="font-size: small;font-style: italic;">Last signed in Jan 3, 2020 at 7:00 PM ET</label>
+             </div>
+            <div class='column' fxFlex="50" fxFlex.md="100" fxFlex.gt.sm="100" fxFlex.xs="100">
+              <mat-accordion>
+                <mat-expansion-panel [expanded]="true" (opened)="AccountsOpenState = true"
+                (closed)="AccountsOpenState = false" >
+                  <mat-expansion-panel-header [ngClass]="{'dash-card-list-header-color': AccountsOpenState}">
+                    <mat-panel-title [ngClass]="{'dash-card-list-header-color': AccountsOpenState}">
+                      Credit Cards & Products
+                    </mat-panel-title>
+                    <mat-panel-description [ngClass]="{'dash-card-list-header-color': AccountsOpenState}">
+                      Current Balance
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  
+              <div class='blue-column' style="padding: 0 0px 0px;">
+                <mat-divider></mat-divider>
+                <div class="dash-card-list">
+                <div fxLayout="row" *ngFor="let card of Cards">
+                  <mat-card fxFlex = 100>
+
+                    <mat-card-header>
+                      {{card.card_name}} ({{card.card_number}})
+
+                    </mat-card-header>
+                    <mat-card-content fxLayout="row">
+                      <div fxLayout="column">
+                        <img src="/assets/rev-card-2.png"  class="dash-card-list-img">
+                        <span style="float: right;">
+                          {{card.card_amount}}
+                        </span>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                  <mat-divider></mat-divider>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="JourneyOpenState = true" (closed)="JourneyOpenState = false" >
+            <mat-expansion-panel-header [ngClass]="{'dash-card-list-header-color': JourneyOpenState}">
+              <mat-panel-title [ngClass]="{'dash-card-list-header-color': JourneyOpenState}">
+                Credit Journey
+              </mat-panel-title>
+              <mat-panel-description>
+               
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+        <div class='blue-column'>
+          <mat-divider></mat-divider>
+          <div class="dash-card-list">
+          <div fxLayout="row" *ngFor="let card of Cards">
+            <mat-card fxFlex = 100>
+
+              <mat-card-header>
+                {{card.card_name}} ({{card.card_number}})
+
+              </mat-card-header>
+              <mat-card-content fxLayout="row">
+                <div fxLayout="column">
+                  <img src="/assets/rev-card-2.png"  class="dash-card-list-img">
+                  <span style="float: right;">
+                    {{card.card_amount}}
+                  </span>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+          </mat-accordion>
+          </div>
+            <div class='column_2' >
+              <div class='green-column'>
+                  
+                  <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  >
+
+                    <mat-card-header>
+                     
+                      
+                  <div class='row dash-card-detail'>
+                      <span> Jack Nicolas  <a href="#">   (1234...) </a> </span> <mat-icon>keyboard_arrow_right</mat-icon>
+                  </div>
+                  
+                </mat-card-header>
+                <mat-card-content>
+                <div class='row'>
+                  <div class='column green-column'>
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+
+                      <mat-card-header>
+                       
+                        
+                      </mat-card-header>
+                      <mat-card-content>
+                        <div class='row dash-card-detail'>
+                          <span> Available Balance  </span> <mat-icon class="sm">info</mat-icon>
+                          </div>
+                        <div class='row dash-card-detail'>
+                          <span>
+                          $6500.99  
+                          </span>   
+                        
+                          </div>     
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class='column green-column'>
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+
+                      <mat-card-header>
+                       
+                        
+                      </mat-card-header>
+                      <mat-card-content>
+                        <div class='row dash-card-detail'>
+                          <span> Present Balance </span>
+                          <mat-icon class="sm">info</mat-icon> 
+                          </div>
+                        <div class='row dash-card-detail'>
+                          <span>
+                          $6500.99  
+                          </span>   
+                        
+                          </div>     
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class='column green-column'>
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+
+                      <mat-card-header>
+                       
+                        
+                      </mat-card-header>
+                      <mat-card-content>
+                        <div class='row dash-card-detail'>
+                          <span> Overdraft protection </span>
+                          <mat-icon class="sm">info</mat-icon> 
+                          </div>
+                        <div class='row dash-card-detail'>
+                          <span>
+                          Off
+                          </span>   
+                        
+                          </div>  
+                          <div class='row dash-card-detail'>
+                            <span class="link">
+                            <a href="#">See Detail > </a>
+                            </span>   
+                          
+                            </div>     
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  <div class='column green-column'>
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+
+                      <mat-card-header>
+                       
+                        
+                      </mat-card-header>
+                      <mat-card-content>
+                        <div class='row dash-card-detail'>
+                          <span> Debit card coverage </span>
+                          <mat-icon class="sm">info</mat-icon> 
+                          </div>
+                        <div class='row dash-card-detail'>
+                          <span>
+                          Off
+                          </span>   
+                        
+                          </div>     
+                          <div class='row dash-card-detail'>
+                            <span class="link">
+                            
+                            <a href="#">Set up ></a>
+                            </span>   
+                          
+                            </div>   
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class='row'>
+                  <div class='column'>
+                    
+                     <button fxFlex="100" mat-raised-button color="primary" (click)="getStatement()">Statement</button>
+                  </div>
+                  <div class='column'>
+                     <button fxFlex="100" mat-raised-button color="primary" (click)="paperLess()" >Paperless</button>
+                  </div>
+                  <div class='column'>
+                     <button fxFlex="100" mat-raised-button color="primary" (click)="transferMoney()">Transfer money</button>
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+                  <div class='row dash-card-detail-joy' *ngIf="showStatement">
+                  
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height dash-card-detail-width green-column">
+
+                      <mat-card-header>
+                      <h3> STATEMENT DETAIL</h3>
+                      </mat-card-header>
+                      <mat-card-content>
+                  <mat-table [dataSource]="dataSource" matSort>
+                
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="id">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                      <mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </mat-cell>
+                    </ng-container>
+                
+                    <!-- Progress Column -->
+                    <ng-container matColumnDef="description">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+                      <mat-cell *matCellDef="let row" data-label="description"> {{row.description}} </mat-cell>
+                    </ng-container>
+                
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="category">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+                      <mat-cell *matCellDef="let row" data-label="category"> {{row.category}} </mat-cell>
+                    </ng-container>
+                
+                    <!-- Color Column -->
+                    <ng-container matColumnDef="amount">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Amount </mat-header-cell>
+                      <mat-cell *matCellDef="let row" data-label="amount"> ${{row.amount}} </mat-cell>
+                    </ng-container>
+                
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </mat-row>
+                  </mat-table>
+                
+                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                </mat-card-content>
+              </mat-card>
+                </div>
+                <mat-divider></mat-divider>
+                <div class='row dash-card-detail-joy '>
+                  
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height dash-card-detail-width green-column">
+
+                      <mat-card-header>
+                      <h4> Give some joy</h4>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <div class='column '>     Send a gift card from top merchant, Or a cash gift card to a friend or family. Send your gift now or schedule for later to never miss a special occasion.
+                  </div>
+
+                  <div class='column'>    <a href="#" >Continue ></a> 
+                  </div>
+                       
+                  
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+              </mat-card-content>
+                  </mat-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Investments">
+      <ng-template matTabContent>
+        <h2 style="text-align: center;">Comming Soon</h2>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Pay & transfer">
+      <ng-template matTabContent>
+        <h2 style="text-align: center;">Comming Soon</h2>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+</div>

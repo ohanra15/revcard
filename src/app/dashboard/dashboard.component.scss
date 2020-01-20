@@ -1,0 +1,182 @@
+// .mat-elevation-z8 {
+// width:95%;
+// margin-left: 2%;
+// }
+
+mat-form-field {
+  margin-left: 10px;
+}
+  
+  @media screen and (max-width: 960px) {
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+  
+    .mat-table caption {
+      font-size: 1em;
+    }
+    
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: block;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+
+    .mat-table .mat-cell {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height:30px;
+      margin-bottom: 4%;
+    }
+    .mat-table .mat-cell:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      
+      font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+      border-bottom: 0;
+    }
+      .mat-table .mat-cell:first-child {
+      margin-top: 4%;
+    }
+  }
+
+  // for flex
+  // .some-page-wrapper {
+  //   margin: 15px;
+  //   background-color: red;
+  // }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: .5;
+    margin: 1%;
+  }
+
+  .column_2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 1%;
+  }
+  
+  // .blue-column {
+  //   background-color: blue;
+  //   height: 100px;
+  // }
+  
+  .green-column {
+    border-top: 10px solid #3f51b5;
+    border-radius: 10px;
+  }
+
+  .dash-card-list {
+    max-height: 400px;
+    // overflow-y: scroll;
+  }
+
+  .dash-card-list-img {
+    max-width: 10%;
+    max-height: 10%;
+    margin-left: 2%;
+  }
+
+  .dash-card-detail {
+    padding-bottom: 1%;
+  }
+
+  .dash-card-detail-height {
+    min-height: 100px; 
+  }
+
+  .dash-card-detail-width {
+    min-width: 95%;  
+  }
+
+  
+
+  .dash-card-detail-joy {
+    margin: 1%;
+  }
+
+  .dash-card-list-header-color {
+    background-color:#3f51b5 !important;
+    color: #fff !important;
+    border-radius: 0px;
+  }
+  mat-tab {
+    background-color:#3f51b5 !important;
+    color: #fff !important;
+  }
+  
+  [aria-label=primary] {
+    background-color:#3f51b5 !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    .column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: auto;
+      margin: 1%;
+    }
+  
+    .column_2 {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: auto;
+      margin: 1%;
+    }
+  }
+
+.some-page-wrapper ::ng-deep .mat-expansion-panel-body  {
+  padding: 0 1px 0px !important;
+}
+
+// .mat-tab-group.mat-primary.mat-background-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary.mat-background-primary .mat-ink-bar {
+//   background-color: #ff9900 !important;
+// }
+
+.mat-tab-group.mat-primary ::ng-deep .mat-ink-bar {
+  background-color: #ffc800 !important;
+}
+
+// .mat-accordion ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+//   color: rgb(255, 255, 255);
+// }
+
+// .mat-accordion ::ng-deep .mat-accordion[_ngcontent-dak-c5] .mat-expansion-indicator::after, .mat-expansion-panel-header-description[_ngcontent-dak-c5] {
+//   color: black;
+// }
+
+.dash-card-list-header-color ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+  color: #fff !important;
+}
+
+:host {
+  height: 100% !important;
+}

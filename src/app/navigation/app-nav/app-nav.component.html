@@ -1,0 +1,114 @@
+<div class="example-container" *ngIf="loggedIn" style="height: 100%;">
+    <mat-toolbar color="primary" class="example-toolbar overlay1" *ngIf="loggedIn">
+        <div>
+            <button mat-icon-button (click)="toggleNav()">
+                <mat-icon class="ig">menu</mat-icon>
+            </button>
+        </div>
+
+        <div>
+            <button mat-icon-button (click)="toggleNav()">
+                <mat-icon class="ig">add_comment</mat-icon>
+            </button>
+        </div>
+
+        <div>
+            <button mat-icon-button (click)="toggleNav()">
+                <mat-icon class="ig">flag</mat-icon>
+            </button>
+        </div>
+
+        <span class="filler" style="flex: 1 1 auto">
+            <span fxDirection="center center"><img style="height: 50px;margin-left: 50%;" src="assets/revenued-logo-only-white.png" alt="Avatar" class="img"></span>
+        </span>
+
+        
+        <!-- <div>
+            <button mat-icon-button (click)="toggleNav()">
+                <mat-icon class="ig">search</mat-icon>
+            </button>
+        </div> -->
+        <span>
+            <button mat-icon-button (click)="toggleNav()">
+            <mat-icon class="ig" [matMenuTriggerFor]="menu">account_circle</mat-icon>
+        </button>
+        </span>
+        <span>
+        <button mat-button (click)="onsign()">
+            <mat-icon>exit_to_app</mat-icon>Sign Out
+        </button>
+        </span>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>Profile
+            </button>
+            <button mat-menu-item>
+                <mat-icon>lock</mat-icon>Change Password
+            </button>
+            <button mat-menu-item (click)="onsign()">
+                <mat-icon>exit_to_app</mat-icon>Sign Out
+            </button>
+        </mat-menu>
+
+    </mat-toolbar>
+    <!-- <mat-sidenav-container autosize style="position:inherit;" class="example-sidenav-container" [style.marginTop.px]="">
+        <mat-sidenav style="top: 75px;" opened="true" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+            <div>
+                <mat-nav-list>
+                    <a [matTooltip]="isExpanded ? '' : 'Dashboard'" mat-list-item routerLink="/dashboard"
+                        routerLinkActive="active-list-item">
+                        <mat-icon>dashboard</mat-icon> <span *ngIf="isExpanded"> &nbsp;&nbsp;Dashboard </span>
+                    </a>
+                </mat-nav-list>
+                <hr>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <ng-container *ngTemplateOutlet="template"></ng-container>
+            <div class="footer" #footer>
+                Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
+
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container> -->
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+    <div class="footer" #footer>
+        Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
+
+    </div>
+</div>
+<div *ngIf="!loggedIn">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+<ng-template #template>
+    <router-outlet>
+    </router-outlet>
+</ng-template>
+
+<div class="footer" #footer *ngIf="!loggedIn">
+    <div> 
+        <h3>Follow us :
+            <!-- <fa-icon [icon]="faSquare"></fa-icon>  -->
+            <span class="footer-link"><img  src="assets/fb.png" alt="Avatar" class="img"></span> 
+            <span class="footer-link"><img  src="assets/linked-in.png" alt="Avatar" class="img"></span>
+            <span class="footer-link"><img  src="assets/insta.png" alt="Avatar" class="img"></span>
+            <span class="footer-link"><img  src="assets/twitter.png" alt="Avatar" class="img"></span>
+            <span class="footer-link"><img  src="assets/youtube.png" alt="Avatar" class="img"></span>
+        </h3>
+    </div>
+    <hr>
+    <!-- <div> 
+        <a mat-button>Contact us </a> 
+        <a mat-button>Privacy</a> 
+        <a mat-button>Security</a> 
+        
+        <a mat-button>Term of use</a> 
+        <a mat-button>Accessibility</a> 
+        <a mat-button>SAFE Act: Revenued Mortgage Loan Originators</a> 
+        <a mat-button>Fair Lending</a> 
+        <a mat-button>About Revenued</a> 
+    </div> -->
+    Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
+
+</div>
