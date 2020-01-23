@@ -34,8 +34,13 @@ export class AppNavComponent implements OnInit {
       if (val instanceof NavigationEnd) {
         this.loggedIn = this.setLoggedIn();
 
-        (!this.loggedIn && this.router.navigate(['/login']))
-        // this.getIsLoggedIn(util);
+        (!this.loggedIn && this.router.navigate(['/login']));
+        
+        // if(!this.loggedIn) {
+        //    if(this.router.url !== '/login'){
+        //     this.router.navigate(['/login-dasboard'])
+        //    }
+        // };
       }
     });
   }

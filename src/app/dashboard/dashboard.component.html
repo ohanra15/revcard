@@ -1,24 +1,26 @@
-<div style="display: flex;flex-direction: column;height: 100%;" >
+
+<div style="display: flex;flex-direction: column;height: 100%;" class="dash-scroll-height" >
 <div class="example-header mat-elevation-z8" fxLayout="row">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
+ 
 </div>
 
-<div class="example-container mat-elevation-z8" style="
-height: 100%;
-">
-
+<div class="example-container mat-elevation-z8" style="height: 100%;z-index: 1;">
+  <div fxLayout="row" fxLayoutAlign="center center" class="logo-bg">
+    <!-- <span class="login-logo" style="height: 30%;width: 36%;"><img src="/assets/revcard-colored-logo-small.png"> </span> -->
+  </div>
   <mat-tab-group [color]="primary" [backgroundColor]="primary" mat-stretch-tabs>
     <!-- [color]="primary" [backgroundColor]="primary" -->
-    <mat-tab label="Accounts" >
+    <mat-tab label="Account Summary" >
       <ng-template matTabContent>
-        <div class='some-page-wrapper'>
+        <div class='some-page-wrapper' style="background-color: #fff;">
           <div class='row' fxLayout="row">
             <div  class='row' style="flex-direction: row-reverse;padding: .5%;">
               <label style="font-size: small;font-style: italic;">Last signed in Jan 3, 2020 at 7:00 PM ET</label>
              </div>
-            <div class='column' fxFlex="50" fxFlex.md="100" fxFlex.gt.sm="100" fxFlex.xs="100">
+            <!-- <div class='column' fxFlex="50" fxFlex.md="100" fxFlex.gt.sm="100" fxFlex.xs="100">
               <mat-accordion>
                 <mat-expansion-panel [expanded]="true" (opened)="AccountsOpenState = true"
                 (closed)="AccountsOpenState = false" >
@@ -89,11 +91,11 @@ height: 100%;
       </div>
     </mat-expansion-panel>
           </mat-accordion>
-          </div>
+          </div> -->
             <div class='column_2' >
               <div class='green-column'>
                   
-                  <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  >
+                  <mat-card fxFlex="100"  >
 
                     <mat-card-header>
                      
@@ -106,7 +108,7 @@ height: 100%;
                 <mat-card-content>
                 <div class='row'>
                   <div class='column green-column'>
-                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+                    <mat-card fxFlex.xl="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.gt.sm="100" fxFlex.xs="100"  class="dash-card-detail-height">
 
                       <mat-card-header>
                        
@@ -126,7 +128,7 @@ height: 100%;
                     </mat-card>
                   </div>
                   <div class='column green-column'>
-                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="100"  class="dash-card-detail-height">
 
                       <mat-card-header>
                        
@@ -147,7 +149,7 @@ height: 100%;
                     </mat-card>
                   </div>
                   <div class='column green-column'>
-                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="100"  class="dash-card-detail-height">
 
                       <mat-card-header>
                        
@@ -155,15 +157,15 @@ height: 100%;
                       </mat-card-header>
                       <mat-card-content>
                         <div class='row dash-card-detail'>
-                          <span> Overdraft protection </span>
+                          <span> Payment Calender </span>
                           <mat-icon class="sm">info</mat-icon> 
                           </div>
-                        <div class='row dash-card-detail'>
+                        <!-- <div class='row dash-card-detail'>
                           <span>
                           Off
                           </span>   
                         
-                          </div>  
+                          </div>   -->
                           <div class='row dash-card-detail'>
                             <span class="link">
                             <a href="#">See Detail > </a>
@@ -174,7 +176,7 @@ height: 100%;
                     </mat-card>
                   </div>
                   <div class='column green-column'>
-                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="90"  class="dash-card-detail-height">
+                    <mat-card fxFlex.xl="30" fxFlex.lg="50" fxFlex.md="50" fxFlex.gt.sm="100" fxFlex.xs="100"  class="dash-card-detail-height">
 
                       <mat-card-header>
                        
@@ -182,22 +184,22 @@ height: 100%;
                       </mat-card-header>
                       <mat-card-content>
                         <div class='row dash-card-detail'>
-                          <span> Debit card coverage </span>
+                          <span> Rewards  Points</span>
                           <mat-icon class="sm">info</mat-icon> 
                           </div>
                         <div class='row dash-card-detail'>
                           <span>
-                          Off
+                          255
                           </span>   
                         
                           </div>     
-                          <div class='row dash-card-detail'>
+                          <!-- <div class='row dash-card-detail'>
                             <span class="link">
                             
                             <a href="#">Set up ></a>
                             </span>   
                           
-                            </div>   
+                            </div>    -->
                       </mat-card-content>
                     </mat-card>
                   </div>
@@ -209,10 +211,10 @@ height: 100%;
                      <button fxFlex="100" mat-raised-button color="primary" (click)="getStatement()">Statement</button>
                   </div>
                   <div class='column'>
-                     <button fxFlex="100" mat-raised-button color="primary" (click)="paperLess()" >Paperless</button>
+                    <!--  <button fxFlex="100" mat-raised-button color="primary" (click)="paperLess()" >Paperless</button> -->
                   </div>
                   <div class='column'>
-                     <button fxFlex="100" mat-raised-button color="primary" (click)="transferMoney()">Transfer money</button>
+                    <!--  <button fxFlex="100" mat-raised-button color="primary" (click)="transferMoney()">Transfer money</button> -->
                   </div>
                 </div>
                 <mat-divider></mat-divider>
@@ -286,7 +288,7 @@ height: 100%;
         </div>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Investments">
+    <!-- <mat-tab label="Investments">
       <ng-template matTabContent>
         <h2 style="text-align: center;">Comming Soon</h2>
       </ng-template>
@@ -295,7 +297,7 @@ height: 100%;
       <ng-template matTabContent>
         <h2 style="text-align: center;">Comming Soon</h2>
       </ng-template>
-    </mat-tab>
+    </mat-tab> -->
   </mat-tab-group>
 </div>
 </div>

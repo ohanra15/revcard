@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
 
@@ -13,12 +14,14 @@ export class DashboardComponent implements OnInit {
     pauseOnHover: true,
     clickToClose: true
   };
+
+  isLoggedIn: boolean = !!localStorage.getItem('valid-user');
   Cards=[];
   JourneyOpenState: boolean = false;
   AccountsOpenState: boolean = true;
   primary ="primary";
   showStatement: boolean = true;
-  constructor() {
+  constructor(private router: Router) {
     // create 100 users
     // const users: IUserData[] = [];
     var usersList:  IStatementData[]  = [
@@ -104,6 +107,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     // this._service.success("nat","dndnnd",this.options);
+    if(!this.isLoggedIn){
+      this.router.navigate(['/login'])
+      return;
+    }
   }
 
 
