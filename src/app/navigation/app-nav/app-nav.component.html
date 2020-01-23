@@ -1,6 +1,6 @@
 <div class="example-container" *ngIf="loggedIn" style="height: 100%;">
     <mat-toolbar color="primary" class="example-toolbar overlay1" *ngIf="loggedIn">
-        <div>
+        <!-- <div>
             <button mat-icon-button (click)="toggleNav()">
                 <mat-icon class="ig">menu</mat-icon>
             </button>
@@ -16,10 +16,15 @@
             <button mat-icon-button (click)="toggleNav()">
                 <mat-icon class="ig">flag</mat-icon>
             </button>
+        </div> -->
+        <div>
+            <span class="login-logo" ><img  style="height: 40px;"  src="/assets/revcard-colored-logo-small.png"> </span>
         </div>
 
         <span class="filler" style="flex: 1 1 auto">
-            <span fxDirection="center center"><img style="height: 50px;margin-left: 50%;" src="assets/revenued-logo-only-white.png" alt="Avatar" class="img"></span>
+            <span fxDirection="center center">
+                <!-- <img style="height: 50px;margin-left: 39%;" src="assets/revenued-logo-only-white.png" alt="Avatar" class="img"> -->
+            </span>
         </span>
 
         
@@ -33,17 +38,32 @@
             <mat-icon class="ig" [matMenuTriggerFor]="menu">account_circle</mat-icon>
         </button>
         </span>
-        <span>
+        <!-- <span>
         <button mat-button (click)="onsign()">
             <mat-icon>exit_to_app</mat-icon>Sign Out
         </button>
-        </span>
+        </span> -->
         <mat-menu #menu="matMenu">
             <button mat-menu-item>
                 <mat-icon>account_circle</mat-icon>Profile
             </button>
             <button mat-menu-item>
-                <mat-icon>lock</mat-icon>Change Password
+                <mat-icon>cloud_upload</mat-icon>Document Uploads
+            </button>
+            <button mat-menu-item>
+                <mat-icon>cloud_upload</mat-icon>Upload Bank Information
+            </button>
+            <button mat-menu-item>
+                <mat-icon>card_travel</mat-icon>New Card Activation
+            </button>
+            <button mat-menu-item>
+                <mat-icon>credit_card</mat-icon>Lost/Stolen Card
+            </button>
+            <button mat-menu-item>
+                <mat-icon>card_giftcard</mat-icon>Change Pin
+            </button>
+            <button mat-menu-item>
+                <mat-icon>contact_support</mat-icon>Other Customer Support
             </button>
             <button mat-menu-item (click)="onsign()">
                 <mat-icon>exit_to_app</mat-icon>Sign Out
@@ -51,6 +71,10 @@
         </mat-menu>
 
     </mat-toolbar>
+
+    <div class="logo-bg">
+        <!-- <span class="login-logo" style="height: 30%;width: 36%;"><img src="/assets/revcard-colored-logo-small.png"> </span> -->
+      </div>
     <!-- <mat-sidenav-container autosize style="position:inherit;" class="example-sidenav-container" [style.marginTop.px]="">
         <mat-sidenav style="top: 75px;" opened="true" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
             [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
@@ -73,12 +97,13 @@
         </mat-sidenav-content>
     </mat-sidenav-container> -->
     <ng-container *ngTemplateOutlet="template"></ng-container>
-    <div class="footer" #footer>
+    <!-- <footer class="footer_dash" #footer>
+        
         Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
 
-    </div>
+    </footer> -->
 </div>
-<div *ngIf="!loggedIn">
+<div *ngIf="!loggedIn" style="height: 100%;">
     <ng-container *ngTemplateOutlet="template"></ng-container>
 </div>
 <ng-template #template>
@@ -86,10 +111,10 @@
     </router-outlet>
 </ng-template>
 
-<div class="footer" #footer *ngIf="!loggedIn">
-    <div> 
+<div class="footer" #footer >
+    <!-- *ngIf="!loggedIn" -->
+    <div class="mobile-layout"> 
         <h3>Follow us :
-            <!-- <fa-icon [icon]="faSquare"></fa-icon>  -->
             <span class="footer-link"><img  src="assets/fb.png" alt="Avatar" class="img"></span> 
             <span class="footer-link"><img  src="assets/linked-in.png" alt="Avatar" class="img"></span>
             <span class="footer-link"><img  src="assets/insta.png" alt="Avatar" class="img"></span>
@@ -97,8 +122,8 @@
             <span class="footer-link"><img  src="assets/youtube.png" alt="Avatar" class="img"></span>
         </h3>
     </div>
-    <hr>
-    <!-- <div> 
+    <hr class="mobile-layout">
+    <div class="mobile-layout"> 
         <a mat-button>Contact us </a> 
         <a mat-button>Privacy</a> 
         <a mat-button>Security</a> 
@@ -108,7 +133,44 @@
         <a mat-button>SAFE Act: Revenued Mortgage Loan Originators</a> 
         <a mat-button>Fair Lending</a> 
         <a mat-button>About Revenued</a> 
-    </div> -->
-    Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
+    </div>
+    <div class="desktop-layout flex-container">
+    <div class="row">
+        <div class="column">
+            <a mat-button>About Revenued</a> 
+            <a mat-button>Terms of Service</a> 
+            <a mat-button>Privacy Policy</a> 
+            
+            <a mat-button>FAQs</a> 
+            <a mat-button>Contact Us</a> 
+            <a mat-button>Site Map</a> 
+        </div>
+        <div class="column">
+            <a mat-button>Cash Flow</a> 
+            <a mat-button>Business Credit</a> 
+            <a mat-button>Business Banking</a> 
+            
+            <a mat-button>Business Loans</a> 
+            <a mat-button>Business Finance</a> 
+            <a mat-button>Business Revenue</a> 
+        </div>
+        <div class="column_2">
+            <p>Revenued’s financial content
+                 and tools for small business help you
+                 organize your finances.</p>
+                 <div class="row">
+                 <span class="footer-link"><img  src="assets/facebook.svg" alt="Avatar" class="img"></span> 
+                 <span class="footer-link"><img  src="assets/linkedin.svg" alt="Avatar" class="img"></span>
+                 <!-- <span class="footer-link"><img  src="assets/insta.png" alt="Avatar" class="img"></span> -->
+                 <span class="footer-link"><img  src="assets/twitter.svg" alt="Avatar" class="img"></span>
+                </div>
+               
+        </div>
+    </div>
+    <div class="row_1">
+        Copyright © {{env.project_year}} {{env.project_name}}. All rights reserved.
+       </div>
+</div>
+    
 
 </div>

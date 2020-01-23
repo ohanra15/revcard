@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { DashboardComponent } from "./dashboard.component";
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 import {
   MatAutocompleteModule,
   MatIconModule,
@@ -32,7 +32,8 @@ import {
     MatTabsModule,
     MatCardModule,
     MatExpansionModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class DashboardModule { }
